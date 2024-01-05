@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter } from 'react-router-dom';
+import Login from './pages/Login';
+import AdmHome from './pages/AdmHome';
+import WornkingHome from './pages/WorinkingHome';
+import Register from './pages/Register';
+import Layout from './Components/Layout';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const app = createBrowserRouter([
+ {
+  element: <Layout/>,
+  children: [
+    {
+      path: "/",
+      element: <Login/>
+    },
+    {
+      path: "/adm",
+      element: <AdmHome/>
+    },
+    {
+      path: "/working",
+      element: <WornkingHome/>
+    },
+    {
+      path: "/register",
+      element: <Register/>
+    }
+  ]
+ }
+])
 
-export default App;
+export default app

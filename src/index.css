@@ -1,13 +1,173 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+  background-color: #121212;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+table{
+  border: 1px solid #CCC;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table caption{
+  font-size: 1.5em;
+  margin: 0.5em 0  0.75em;
+}
+
+table tr{
+
+  background-color: #222;
+  border:1px solid #DDD;
+  padding: 0.35em;
+}
+
+table th, table td{
+  color: #FFF;
+  padding: 0.60em;
+  text-align: center;
+}
+
+table th{
+  color: #FFF;
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+table td .action{
+  color: #FFF;
+  border:0;
+  padding: 5px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-right: 3px;
+}
+
+table td .action svg{
+  vertical-align: middle;
+}
+
+table td .badge{
+  padding: 3px;
+  border-radius: 3px;
+  color: #FFF;
+}
+
+@media screen and (max-width: 600px){
+    table{
+      border:0;
+    };
+
+    table caption{
+      font-size: 1.3em;
+    }
+
+    table thead{
+      border:none;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+       color: #FFF;
+      position: absolute;
+      width: 1px;
+    }
+
+    table tr{
+      border-bottom: 3px solid #DDD;
+      display: block;
+      color: #FFF;
+      margin-bottom: 0.60em;
+    }
+
+    table td{
+      border-bottom: 1px solid #DDD;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+      color: #FFF;
+    }
+
+    table td::before{
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+}
+
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.6);
+  z-index: 99;
+}
+
+.modal .container{
+  position: fixed;
+  max-width: 600px;
+  top: 15%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  padding: 4em 2em;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 20px rgba(0,0,0, 0.8);
+}
+
+.close{
+  background-color: #f65835;
+  border:0;
+  border-radius: 5px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 15px;
+  color: #FFF;
+}
+
+.close svg{
+  margin-right: 5px;
+}
+
+.modal h2{
+  margin-bottom: 1.2em;
+  color: #FFF;
+  font-size: 30px;
+}
+
+.modal span{
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.modal span i{
+  font-weight: 400;
+  margin-right: 1em;
+  padding: 2px 8px;
+}
+
+.row{
+  margin-bottom: 1em;
+  color: #FFF;
+}
+
+.modal p{
+  padding-top: 0.5em;
+  white-space: pre-wrap;
+  line-height: 150%;
+  color: #FFF;
 }
